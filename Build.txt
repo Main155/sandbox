@@ -1,0 +1,23 @@
+## Build (header-only, no modules)
+g++ -std=c++20 main.cpp -o mps
+cl /std:c++20 /EHsc main.cpp
+
+## Build (with .ixx modules, MSVC)
+cl /std:c++20 /EHsc main.cpp command.ixx control.ixx /Fe:mps
+
+## Build (with .ixx modules, GCC experimental)
+g++ -std=c++20 -fmodules-ts command.ixx control.ixx main.cpp -o mps
+
+## CMake (3.28+)
+cmake_minimum_required(VERSION 3.28)
+project(mps_terminal LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+add_executable(mps main.cpp IO.h MPS.h ROOT.h find.h password.h)
+if(MSVC)
+  target_sources(mps PRIVATE command.ixx control.ixx)
+else()
+  # experimental module flags; prefer per-compiler tuning
+  target_sources(mps PRIVATE command.ixx control.ixx)
+endif()
