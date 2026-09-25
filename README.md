@@ -1,14 +1,14 @@
 # MPS Terminal
-A modular, extensible terminal command system built in C++
+A modular terminal command system in C++20 — command dispatch via unordered_map+std::function, file management, ROOT read/write subsystem, cross-platform I/O (RAII terminal guards, hidden password input, ANSI color, logging). Statistics module planned.
 
-## Environment Configuration
-·GCC：concepts 10+
-
-·Clang：concepts 10+
-
-·MSVC16.8 
-
-·An environment that supports C++20 modules
+## Environment
+- Core / header-only (IO.h, MPS.h, ROOT.h, find.h, password.h): any C++17/20 compiler
+  examples: GCC 10+, Clang 10+, MSVC 16.8+ for concepts/ranges basics
+- C++20 modules with .ixx:
+  - MSVC: VS2022 17.x recommended (.ixx recognized natively, /std:c++20)
+  - Clang: 16+ experimental (-std=c++20 -fmodules)
+  - GCC: 13/14+ experimental (-std=c++20 -fmodules-ts); GCC 10 only for non-module code, not for .ixx
+- Build system: CMake 3.28+ for automatic module dependency scanning (Ninja generator recommended); manual compiler flags otherwise
 
 ## Project Brief
 A terminal emulator developed in C++, including file operations, etc.
