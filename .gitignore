@@ -1,2 +1,7 @@
-io_logger.log
 build/
+*.obj
+*.o
+*.ifc
+*.pcm
+*.gcm
+io_logger.log
