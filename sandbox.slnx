@@ -1,7 +1,0 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Project Path="sandbox.vcxproj" Id="ac68eb73-d649-472e-a9e9-6c32d0e058e3" />
-</Solution>
