@@ -30,6 +30,10 @@
 
 The project is updated approximately every 1 to 3 weeks.
 
+The author is planning to create a new repository.
+
+Create separate branches to implement C++20 modules and traditional header files respectively.
+
 ### Finally
 
 Thank you all for your support.
