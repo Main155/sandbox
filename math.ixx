@@ -42,6 +42,8 @@ namespace math_center
 			if (data_input == "cls")
 			{
 				IO::clear_screen();
+				Statistics_data.clear();
+				IO::print_function("cls           Reset and clear screen\n");
 				continue;
 			}
 			try
