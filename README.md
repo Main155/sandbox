@@ -16,7 +16,18 @@
 
 - A terminal emulator developed in C++, including file operations, etc.
 - The author is diligently updating the project and preparing to start designing programs oriented towards statistics.
-- Open to creative extensions from the community
+- Open to creative extensions from the community.
+
+  **Below is a screenshot of the running program:**
+  
+<img width="445" height="455" alt="image" src="https://github.com/user-attachments/assets/dbcc219c-e2d0-4488-adfc-ffa67506a2a3" />
+<img width="394" height="440" alt="{087E1713-8B58-409A-9189-B111BC23C7B8}" src="https://github.com/user-attachments/assets/7198a4a8-a713-44ac-93f5-dc739f712136" />
+
+
+<img width="307" height="238" alt="{25EB781B-F0BE-4B1C-928B-F65A570AB9B5}" src="https://github.com/user-attachments/assets/126f3d0c-ea5c-4b64-8937-bbef37852141" />
+
+<img width="401" height="181" alt="{A01FA87C-D490-48AB-95EA-AB6DBB82B8FF}" src="https://github.com/user-attachments/assets/6a6b7827-e365-43e8-852e-30f8300d576f" />
+
 - Annotation:
 - This project is for learning purposes, but everyone is welcome to review and comment.
 
