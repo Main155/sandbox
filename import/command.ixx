@@ -73,6 +73,11 @@ export namespace command
 			IO::set_color(IO::Color::Yellow);
 			if (!IO::input_line("\n$root ", root_command))return false;
 			IO::reset_color();
+			if (root_command.empty())
+			{
+				IO::Error("empty\n", IO::error_option::empty);
+				continue;
+			}
 			if (root_command == "exit")   //exit
 			{
 				IO::clear_screen();
@@ -103,7 +108,12 @@ export namespace command
 		while (true)
 		{
 			std::string mps_command;
-			if (!IO::input_line("\n$command ", mps_command))return false;
+			if (!IO::input_line("\n$command ", mps_command))continue;
+			if (mps_command.empty())
+			{
+				IO::Error("empty\n", IO::error_option::empty);
+				continue;
+			}
 			if (mps_command == "exit")  //exit
 			{
 				IO::clear_screen();
