@@ -27,10 +27,10 @@ namespace math
         return true;
     }
 
-    static std::vector<std::string> g_tokens;
-    static size_t g_pos = 0;
-    static long double expr();
-    static void tokenize(const std::string& s) 
+    std::vector<std::string> g_tokens;
+    size_t g_pos = 0;
+    long double expr();
+    void tokenize(const std::string& s) 
     {
         g_tokens.clear();
         std::string cur;
@@ -47,11 +47,11 @@ namespace math
         if (!cur.empty()) g_tokens.push_back(cur);
     }
 
-    static bool has_next() { return g_pos < g_tokens.size(); }
-    static std::string peek() { return has_next() ? g_tokens[g_pos] : ""; }
-    static void advance() { if (has_next()) ++g_pos; }
+    bool has_next() { return g_pos < g_tokens.size(); }
+    std::string peek() { return has_next() ? g_tokens[g_pos] : ""; }
+    void advance() { if (has_next()) ++g_pos; }
 
-    static long double factor() 
+    long double factor() 
     {
         std::string tok = peek();
 
@@ -95,7 +95,7 @@ namespace math
         catch (...) { std::cerr << "ERR: bad number '" << tok << "'\n"; return 0; }
     }
 
-    static long double power()
+    long double power()
     {
         long double left = factor();
         if (peek() == "^") 
@@ -109,7 +109,7 @@ namespace math
     }
 
     
-    static long double term() 
+    long double term() 
     {
         long double left = power();
         while (has_next()) 
@@ -135,7 +135,7 @@ namespace math
     }
 
 
-    static long double expr() 
+    long double expr() 
     {
         long double left = term();
         while (has_next()) 
