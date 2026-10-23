@@ -83,6 +83,12 @@ namespace PIN
         std::string PIN, assignment;
         if (!IO::file_exists_check(passwordfile)) return false;
         PIN = IO::get_hidden_stars("Please enter your password");
+        if (PIN == "cls")
+        {
+            IO::clear_screen();
+            IO::print_function("Input 'cls ' clear screen\n");
+            return false; // Clear screen
+        }
         if (PIN.size() > 12 || PIN.size() < 6)
         {  //size
             IO::print_function("Input too long\n", IO::action_io::print_error);
@@ -108,6 +114,7 @@ namespace Verification
 {
     inline bool  Password_Verifcation_return()
     {
+        IO::print_function("Input 'cls ' clear screen\n");
         while (true)
         {
             const std::string file_name{ "password.bin" };
