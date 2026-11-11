@@ -69,7 +69,7 @@ export namespace BOOT
 	class run_
 	{
 	public:
-		void mps()
+		void mps() const
 		{
 			static_cast<const T*> (this)->Start();
 		}
@@ -80,7 +80,7 @@ export namespace BOOT
 	private:
 		std::string input;
 	public:
-		bool Start()
+		bool const Start()
 		{
 			Verification::Password_Verifcation_return();//Password verification
 			IO::clear_screen();
