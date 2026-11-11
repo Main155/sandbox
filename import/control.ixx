@@ -65,19 +65,22 @@ namespace control
 
 export namespace BOOT
 {
+	template <typename T>
 	class run_
 	{
 	public:
-		virtual ~run_() = default;
-		virtual bool Start() = 0;
+		void mps()
+		{
+			static_cast<const T*> (this)->Start();
+		}
 	};
 
-	export class Run : public run_
+	export class Run : public run_<Run>
 	{
 	private:
 		std::string input;
 	public:
-		bool Start() override
+		bool Start()
 		{
 			Verification::Password_Verifcation_return();//Password verification
 			IO::clear_screen();
